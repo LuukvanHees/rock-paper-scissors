@@ -50,13 +50,13 @@ let humanScore = 0;
 let computerScore = 0;
 
 /* OBTAIN score attribution for user or computer */
-function playRound(a, b){
+function playRound(humanSelection, computerSelection){
     /* PRINT user choice */
-    console.log("You chose " + a.toLowerCase());
+    console.log("You chose " + humanSelection.toLowerCase());
     /* PRINT computer choice */
-    console.log("The computer chose " + b.toLowerCase())
+    console.log("The computer chose " + computerSelection.toLowerCase())
     /* IF user input is paper and computer input is rock THEN return user as winner */
-    if ( a === "Paper" && b === "Rock"){
+    if ( humanSelection === "Paper" && computerSelection === "Rock"){
         /* PRINT result of play round */
         console.log("You win! Paper (you) beats rock (computer).");
         /* PRINT point attribution */
@@ -65,7 +65,7 @@ function playRound(a, b){
         return (++humanScore);
     }
     /* IF user input is paper and computer input is scissors THEN return computer as winner */
-    else if ( a === "Paper" && b === "Scissors"){
+    else if ( humanSelection === "Paper" && computerSelection === "Scissors"){
         /* PRINT result of play round */
         console.log("You lose. Paper (you) doesn't beat scissors (computer).");
          /* PRINT score overview */
@@ -74,7 +74,7 @@ function playRound(a, b){
          return (++computerScore);
     }
     /* IF user input is rock and computer input is paper THEN return computer as winner */
-    else if ( a === "Rock" && b === "Paper"){
+    else if ( humanSelection === "Rock" && computerSelection === "Paper"){
         /* PRINT result of play round */
         console.log("You lose. Rock (you) doesn't beat paper (computer).");
          /* PRINT score overview */
@@ -83,7 +83,7 @@ function playRound(a, b){
         return (++computerScore);
     }
     /* IF user input is rock and computer input is scissors THEN return user as winner */
-    else if ( a === "Rock" && b === "Scissors"){
+    else if ( humanSelection === "Rock" && computerSelection === "Scissors"){
         /* PRINT result of play round */
         console.log("You win! Rock (you) beats scissors (computer).");
          /* PRINT score overview */
@@ -92,7 +92,7 @@ function playRound(a, b){
         return (++humanScore);
     }
     /* IF user input is scissors and computer input is paper THEN return user as winner */
-    else if ( a === "Scissors" && b === "Paper"){
+    else if ( humanSelection === "Scissors" && computerSelection === "Paper"){
         /* PRINT result of play round */
         console.log("You win! Scissors (you) beats paper (computer).");
          /* PRINT score overview */
@@ -101,7 +101,7 @@ function playRound(a, b){
          return (++humanScore);
     }
     /* IF user input is scissors and computer rock is rock THEN return computer as winner */
-    else if ( a === "Scissors" && b === "Rock"){
+    else if ( humanSelection === "Scissors" && computerSelection === "Rock"){
         /* PRINT result of play round */
         console.log("You lose. Scissors (you) doesn't beat rock.");
          /* PRINT score overview */
